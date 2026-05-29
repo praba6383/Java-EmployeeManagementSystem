@@ -40,7 +40,7 @@ public class EmployeeServices {
 
     public void deleteEmployee(Long id) {
     	if (!repository.existsById(id)) {
-            throw new NoSuchElementException("Employee not found with id: " + id);
+            throw new NoSuchElementException("Employee not found db with id: " + id);
         }
         repository.deleteById(id);
     }

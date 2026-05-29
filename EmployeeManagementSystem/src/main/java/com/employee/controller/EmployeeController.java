@@ -1,14 +1,10 @@
 package com.employee.controller;
 
-import java.time.LocalDateTime;
-import java.util.HashMap;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,10 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.employee.entity.Employee;
-import com.employee.entity.ErrorRespons;
 import com.employee.service.EmployeeServices;
-
-import jakarta.persistence.criteria.LocalDateTimeField;
 
 @RestController
 @RequestMapping("/employees")
@@ -72,7 +65,7 @@ public class EmployeeController {
 	@DeleteMapping("/{id}")
 	public ResponseEntity<String> deleteEmployee(@PathVariable Long id) {
 		service.deleteEmployee(id);
-		return ResponseEntity.ok("Employee with ID " + id + " deleted successfully");
+		return ResponseEntity.ok("Employee with ID " + id + " deleted successfully our db");
 	}
 	
 
